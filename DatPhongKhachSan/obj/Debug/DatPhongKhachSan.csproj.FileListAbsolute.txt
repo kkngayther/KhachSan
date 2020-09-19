@@ -1,0 +1,10 @@
+C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\bin\Debug\DatPhongKhachSan.exe.config
+C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\bin\Debug\DatPhongKhachSan.exe
+C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\bin\Debug\DatPhongKhachSan.pdb
+C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.csprojAssemblyReference.cache
+C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.Form1.resources
+C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.Properties.Resources.resources
+C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.csproj.GenerateResource.cache
+C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.csproj.CoreCompileInputs.cache
+C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.exe
+C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.pdb
