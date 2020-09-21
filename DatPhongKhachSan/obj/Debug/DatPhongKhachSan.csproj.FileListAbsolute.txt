@@ -8,3 +8,13 @@ C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\obj\Debug\DatPhongKh
 C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.csproj.CoreCompileInputs.cache
 C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.exe
 C:\Users\leanh\Desktop\C#\DatPhongKhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.pdb
+C:\UIT\C#\KhachSan\DatPhongKhachSan\bin\Debug\DatPhongKhachSan.exe.config
+C:\UIT\C#\KhachSan\DatPhongKhachSan\bin\Debug\DatPhongKhachSan.exe
+C:\UIT\C#\KhachSan\DatPhongKhachSan\bin\Debug\DatPhongKhachSan.pdb
+C:\UIT\C#\KhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.csprojAssemblyReference.cache
+C:\UIT\C#\KhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.Form1.resources
+C:\UIT\C#\KhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.Properties.Resources.resources
+C:\UIT\C#\KhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.csproj.GenerateResource.cache
+C:\UIT\C#\KhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.csproj.CoreCompileInputs.cache
+C:\UIT\C#\KhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.exe
+C:\UIT\C#\KhachSan\DatPhongKhachSan\obj\Debug\DatPhongKhachSan.pdb

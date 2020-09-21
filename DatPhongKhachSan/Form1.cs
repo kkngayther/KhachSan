@@ -16,20 +16,33 @@ namespace DatPhongKhachSan
         public Form1()
         {
             InitializeComponent();
-            //DataGrid myGrid = new DataGrid();
-            //khoiTao();
             dataGridView.Columns.Clear();
-            dt.Columns.Add("Ma", typeof(string));
-            dt.Columns.Add("Loai", typeof(string));
-            dt.Columns.Add("Gia", typeof(double));
-            dt.Columns.Add("TT", typeof(string));
-            dt.Columns.Add("Ngay", typeof(int));
+            dt.Columns.Add("Mã Phòng", typeof(string));
+            dt.Columns.Add("Loại Phòng", typeof(string));
+            dt.Columns.Add("Giá Phòng", typeof(double));
+            dt.Columns.Add("Tình Trạng Phòng", typeof(string));
+            dt.Columns.Add("Số Ngày Ở", typeof(int));
+            khoiTao();
         }
         private void khoiTao()
         {
-            List<Phong> dsPhong = new List<Phong>();
-            dsPhong.Add(new Phong() { maPhong = "A001", loaiPhong = "A", giaPhong = 150000, tinhTrangPhong = 0, soNgayO = 0 });
-            dataGridView.DataSource = dsPhong;
+            dt.Rows.Add("A001", "A", 150000, 0, 0);
+            dt.Rows.Add("A002", "A", 150000, 0, 0);
+            dt.Rows.Add("B001", "B", 200000, 1, 2);
+            dt.Rows.Add("B002", "B", 200000, 0, 0);
+            dt.Rows.Add("C001", "C", 300000, 0, 0);
+            dt.Rows.Add("C002", "C", 300000, 1, 10);
+            dt.Rows.Add("C003", "C", 300000, 0, 0);
+            dataGridView.DataSource = dt;
+        }
+        private void trangThai()
+        {
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                int temp = Convert.ToInt32(dt.Rows[i].ToString());
+                if (temp == 1)
+                    dataGridView.BackgroundColor = Color.Red;
+            }    
         }
 
         private void btnThemPhong_Click(object sender, EventArgs e)
@@ -40,15 +53,75 @@ namespace DatPhongKhachSan
                 int ngay;
                 double gia;
                 ma = txtMaPhong.Text;
-                loai = txtLoaiPhong.Text;
+                loai = cbLoaiPhong.Text;
                 gia = Convert.ToDouble(txtGiaPhong.Text);
-                tt = txtTinhTrangPhong.Text;
+                tt = cbTinhTrangPhong.Text;
                 ngay = Convert.ToInt32(txtSoNgayO.Text);
                 dt.Rows.Add(ma, loai, gia, tt, ngay);
                 dataGridView.DataSource = dt;
-
             }
             catch { MessageBox.Show("Dữ liệu nhập vào có lỗi !!!"); };
+        }
+        private int kiemTraPhong(string thongTin)
+        {
+            int kiemTra = -1;
+            for(int i = 0; i < dt.Rows.Count; i++)
+            {
+                string tam = dt.Rows[i].ItemArray[0].ToString();
+                if (tam == thongTin)
+                {
+                    kiemTra = i;
+                    break;
+                }
+            }    
+            return kiemTra;
+        }
+        private void btnDatPhong_Click(object sender, EventArgs e)
+        {
+            string ma, tt;
+            int ngay;
+            ma = txtMaPhong.Text;
+            tt = cbTinhTrangPhong.Text;
+            ngay = Convert.ToInt32(txtSoNgayO.Text);
+
+            int tam = kiemTraPhong(ma);
+            dataGridView.Rows[tam].Cells[3].Value = 1;
+            dataGridView.Rows[tam].Cells[4].Value = ngay;
+            MessageBox.Show("Đặt phòng thành công!!!");
+        }
+
+        private void dataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+            {
+                dataGridView.CurrentRow.Selected = true;
+                txtMaPhong.Text = dataGridView.Rows[e.RowIndex].Cells["Mã Phòng"].FormattedValue.ToString();
+                cbLoaiPhong.Text = dataGridView.Rows[e.RowIndex].Cells["Loại Phòng"].FormattedValue.ToString();
+                txtGiaPhong.Text = dataGridView.Rows[e.RowIndex].Cells["Giá Phòng"].FormattedValue.ToString();
+                cbTinhTrangPhong.Text = dataGridView.Rows[e.RowIndex].Cells["Tình Trạng Phòng"].FormattedValue.ToString();
+                txtSoNgayO.Text = dataGridView.Rows[e.RowIndex].Cells["Số Ngày Ở"].FormattedValue.ToString();
+            }
+        }
+
+        private void btnHuyPhong_Click(object sender, EventArgs e)
+        {
+            string ma;
+            ma = txtMaPhong.Text;
+            int tam = kiemTraPhong(ma);
+            dataGridView.Rows[tam].Cells[3].Value = 0;
+            dataGridView.Rows[tam].Cells[4].Value = 0;
+            MessageBox.Show("Hủy phòng thành công!!!");
+        }
+        private void btnThanhToan_Click(object sender, EventArgs e)
+        {
+            string ma = txtMaPhong.Text;
+            int tam = kiemTraPhong(ma);
+            dataGridView.Rows[tam].Cells[3].Value = 0;
+            dataGridView.Rows[tam].Cells[4].Value = 0;
+            int ngay = Convert.ToInt32(txtSoNgayO.Text);
+            double gia = Convert.ToDouble(txtGiaPhong.Text);
+            double thanhTien = ngay * gia;
+            MessageBox.Show("Số tiền cần thanh toán: " + thanhTien + " đồng.");
         }
     }
 }
